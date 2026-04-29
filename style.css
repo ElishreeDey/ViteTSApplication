@@ -1,0 +1,164 @@
+/*
+**********************************************************************
+* Filename    : detailPages.css
+* Description : Holds all style how the registration screen look like
+* Author      : Elishree Dey Chand
+* Created     : 2026-05-24
+**********************************************************************
+*/
+
+/* Style the header */
+h1 {
+  color: green;
+  font: Arial bold;
+  font-size: 24px;
+  padding: 8px;          
+}
+
+/* Style the labels */
+label {
+  color: green;
+  padding: 8px;
+  font: Arial;
+  font-size: 12px;
+  margin-bottom: 6px; /* space between label and input */
+
+}
+
+/* Style the entry input fields */
+input {
+  width: 200px;
+  padding: 8px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font: Arial;
+  font-size: 12px;
+}
+
+/* Style the dropdown */
+select {
+  width: 200px;
+  padding: 8px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font: Arial;
+  font-size: 12px;
+}   
+
+/* Style the mandatory symbol */
+.mandatory {
+  color: red;
+  display: inline-block;
+  margin-left: 2px;
+  padding:0px;
+}
+
+/* Style the button */
+button{
+  background-color: #04AA6D;
+  color: white;
+  width: 200px;
+  padding: 8px;
+  margin: 8px 0;
+  border: none;
+}
+button:hover {
+  background: #037e51;
+}
+
+/* Style the body */
+body {
+  font-family: Arial;
+  background: #f2f2f2;      
+  padding: 40px;
+  display: flex;
+  justify-content: center;  /* horizontal center */
+  align-items: center;      /* vertical center */
+}
+
+/* Style table */
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 8px;
+  font: Arial;
+  font-size: 12px;
+}
+th {
+  text-align: center;
+}
+.NoBorder{
+  border: 0px none;
+  border-collapse: collapse;
+  padding: 8px;
+  font: Arial;
+  font-size: 12px;
+}
+
+/* Style StoreDataColumnHeaders */
+.storedDataColHeader {
+  text-align: center;
+  color: green;
+  padding: 8px;
+  font: Arial;
+  font-size: 12px;
+}
+
+/* Style DisplayRegisteredData area */
+.displayRegisteredData {
+  vertical-align: top;
+  border: 0px none;
+  padding-left: 120px;
+}
+
+/* Style to make any tag invisible */
+.invisible {
+  display: none;
+}
+
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #43973c;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  right: 10%;
+  top: 50px;
+  font-size: 15px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@keyframes fadein {
+  from {top: 0; opacity: 0;}
+  to {top: 50px; opacity: 1;}
+}
+
+@keyframes fadeout {
+  from {top: 50px; opacity: 1;}
+  to {top: 0; opacity: 0;}
+}
+
+.pageContainer {
+    display: flex;
+    justify-content: space-between; /* puts them side by side */
+    align-items: flex-start;
+    gap: 40px; /* space between form and table */
+    padding: 30px;
+}
