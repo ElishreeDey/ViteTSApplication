@@ -162,3 +162,11 @@ th {
     gap: 40px; /* space between form and table */
     padding: 30px;
 }
+
+.deleteBtn {
+  color: red;
+}
+
+.editBtn {
+  color: blue;
+}

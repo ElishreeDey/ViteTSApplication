@@ -7,6 +7,45 @@
 ****************************************************************************************************************************
 */
 
+import { checkNotIsEmpty,validateEmail,validateFlexiblePhone } from "../utils/validation";
+
+import { saveData } from "../services/saveData";
+
+import { saveEditedData } from "../services/editDeleteData";
+
+// For onchange Event its like this in Vite and TS we can't directly call validation functions to input element onchage.
+export function initFormEvents(): void {
+
+    const userNameInput = document.getElementById("userName") as HTMLInputElement;
+    if (!userNameInput) return;
+    userNameInput.addEventListener("input", () => {
+        checkNotIsEmpty(userNameInput.value);
+    });
+
+    const emailInput = document.getElementById("email") as HTMLInputElement;
+    if (!emailInput) return;
+    emailInput.addEventListener("input", () => {
+        validateEmail(emailInput.value);
+    });
+
+    const phoneInput = document.getElementById("phone") as HTMLInputElement;
+    if (!phoneInput) return;
+    phoneInput.addEventListener("input", () => {
+        validateFlexiblePhone(phoneInput.value);
+    });
+
+    const btnAddData = document.getElementById("btnAddData") as HTMLButtonElement;
+    btnAddData.addEventListener("click", () => {
+        saveData();
+    });
+
+    const btnEditData = document.getElementById("btnEditData") as HTMLButtonElement;
+    btnEditData.addEventListener("click", () => {
+        saveEditedData();
+    });
+}
+
+
 export function renderForm() : string{
   return `
   
@@ -23,12 +62,12 @@ export function renderForm() : string{
             Email:
             <span id="mandatoryEmail" class="mandatory">*</span>
         </label><br>
-        <input type="email" id="email" required onchange="validateEmail(this.value)"><br>
+        <input type="email" id="email" required><br>
         <label for="phone">
             Phone:
             <span id="mandatoryPhone" class="mandatory">*</span>
         </label><br>
-        <input type="text" id="phone" required onchange="validateFlexiblePhone(this.value)"><br>
+        <input type="text" id="phone" required><br>
         <label for="gender">Gender:</label><br>
         <select id="gender">
             <option value="">Select Gender</option>

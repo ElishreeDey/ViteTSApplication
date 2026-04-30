@@ -9,15 +9,14 @@
 
 import { renderForm } from "./Form";
 import { renderTable } from "./Table";
-
-//document.querySelector<HTMLDivElement>('#divFormComponent')!.innerHTML = renderForm();
-//document.querySelector<HTMLDivElement>('#divTableComponent')!.innerHTML = renderTable();
+import { renderSnackbar } from "./Snackbar";
 
 export function renderApp(): string {
   return `
     <div class="pageContainer">
       ${renderForm()}
       ${renderTable()}
+      ${renderSnackbar()}
     </div>
   `;
 }
