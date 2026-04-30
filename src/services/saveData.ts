@@ -10,6 +10,7 @@ import { checkNotIsEmpty, validateEmail, validateFlexiblePhone } from '../utils/
 import { createTableFromData } from './createTable';
 
 import type { EntryDataBase } from '../type';
+//import type { MsgDataType } from '../type';
 
 import { MsgBgCol } from '../utils/constants';
 
@@ -90,14 +91,24 @@ export function saveData() { //alert('ttttttttttt');
     //alert(err);
 
     //showSnackbar(err);
-    showSnackbar(err,MsgBgCol.errMsgCol);
+    //showSnackbar(err,MsgBgCol.errMsgCol);
+
+    showSnackbar({
+        message: err,
+        color: MsgBgCol.errMsgCol
+    });
 
     return;
   } else {
     //alert("Data saved successfully!");
     
     //showSnackbar("Data saved successfully!");
-    showSnackbar("Data saved successfully!",MsgBgCol.successMsgCol);
+    //showSnackbar(message: "Data saved successfully!",color:MsgBgCol.successMsgCol);
+
+    showSnackbar({
+        message: "Data saved successfully!",
+        color: MsgBgCol.successMsgCol
+    });
 
   }
 

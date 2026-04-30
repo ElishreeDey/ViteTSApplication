@@ -17,7 +17,7 @@ export interface EntryDataBase  {
 
 //specify the msg data types
 //Interface name shouls start with capital 
-/*export interface MsgShowType  {
+export interface MsgDataType  {
   message: string;
   color: string;
-}*/
+}

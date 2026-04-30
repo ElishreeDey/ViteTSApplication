@@ -49,7 +49,13 @@ export function deleteRow(r: HTMLElement) {//alert(r.getHTML);
 
   } else {
     //alert("Deletion action is cancelled.");
-    showSnackbar("Deletion action is cancelled.", MsgBgCol.alertMsgCol);
+    //showSnackbar("Deletion action is cancelled.", MsgBgCol.alertMsgCol);
+
+    showSnackbar({
+      message: "Deletion action is cancelled.",
+      color: MsgBgCol.alertMsgCol
+    });
+
   }
 }
 
