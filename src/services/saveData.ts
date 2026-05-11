@@ -12,19 +12,15 @@ import { createTableFromData } from './createTable';
 import type { EntryDataBase } from '../type';
 //import type { MsgDataType } from '../type';
 
-import { MsgBgCol } from '../utils/constants';
+import { MsgBgCol,ValidationMsg,addEditDeleteMsgText } from '../utils/constants';
 
 
 import { showSnackbar } from '../utils/showSnackbar';
 
-/*const mgColour: MsgBgCol = {
-    successMsgCol: "#008000",
-    alertMsgCol: "#FFBF00",
-    errMsgCol: "#FF0000"
-  };*/
+
 
 // Save Data Function
-export function saveData() { //alert('ttttttttttt');
+export function saveData() { 
 
   // Get values from input fields (INSIDE function)
   const user: EntryDataBase = {
@@ -48,19 +44,23 @@ export function saveData() { //alert('ttttttttttt');
     mandatoryName && (mandatoryName.style.display = 'inline');
     mandatoryEmail && (mandatoryEmail.style.display = 'inline');
     mandatoryPhone && (mandatoryPhone.style.display = 'inline');
-    err = "Please fill all required fields";
+    //err = "Please fill all required fields";
+    err = ValidationMsg.allMandatoryFieldsRequiredTxt;
   }
   else if (user.username.trim() === "") {
     mandatoryName && (mandatoryName.style.display = 'inline');
-    err = "Name is required!";
+    //err = "Name is required!";
+    err = ValidationMsg.nameRequiredTxt;
   }
   else if (user.email === "") {
     mandatoryEmail && (mandatoryEmail.style.display = 'inline');
-    err = "Email is required!";
+    //err = "Email is required!";
+    err = ValidationMsg.emailRequiredTxt;
   }
   else if (user.phone === "") {
     mandatoryPhone && (mandatoryPhone.style.display = 'inline');
-    err = "Phone is required!";
+    //err = "Phone is required!";
+    err = ValidationMsg.phoneRequiredTxt;
   }
 
   // Custom validations
@@ -106,7 +106,8 @@ export function saveData() { //alert('ttttttttttt');
     //showSnackbar(message: "Data saved successfully!",color:MsgBgCol.successMsgCol);
 
     showSnackbar({
-        message: "Data saved successfully!",
+        //message: "Data saved successfully!",
+        message: addEditDeleteMsgText.dataSaveMsg,
         color: MsgBgCol.successMsgCol
     });
 

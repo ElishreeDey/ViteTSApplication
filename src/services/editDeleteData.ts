@@ -14,7 +14,7 @@ import { clearEntryFields } from '../utils/clearEntries';
 import { showSnackbar } from '../utils/showSnackbar';
 
 
-import { MsgBgCol } from '../utils/constants';
+import { MsgBgCol,addEditDeleteMsgText } from '../utils/constants';
 
 //specify the entry data types
 type entryData = {
@@ -52,7 +52,8 @@ export function deleteRow(r: HTMLElement) {//alert(r.getHTML);
     //showSnackbar("Deletion action is cancelled.", MsgBgCol.alertMsgCol);
 
     showSnackbar({
-      message: "Deletion action is cancelled.",
+      //message: "Deletion action is cancelled.",
+      message: addEditDeleteMsgText.deleteCancelTxt,
       color: MsgBgCol.alertMsgCol
     });
 
