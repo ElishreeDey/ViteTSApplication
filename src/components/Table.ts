@@ -6,7 +6,7 @@
 * Created     : 2026-05-29
 ****************************************************************************************************************************
 */
-
+import listIcon from '../assets/listicon.jpg'
 import { editRow,deleteRow } from "../services/editDeleteData";
 
 // For onchange Event its like this in Vite and TS we can't directly call functions so use addEventListener
@@ -34,20 +34,25 @@ export function initTableEvents(): void {
 export function renderTable() : string{
   return `
   
-  <div id="divTableComponent">
-    <h1>View Registered Data</h1><br>
-    <table id="viewData" class="displayRegisteredData">
-        <thead>
-            <tr>
-                <th class="storedDataColHeader">Name</th>
-                <th class="storedDataColHeader">Email</th>
-                <th class="storedDataColHeader">Phone</th>
-                <th class="storedDataColHeader">Gender</th>
-                <th class="storedDataColHeader" colspan="2">Action</th>
-            </tr>
-        </thead>
-        <tbody id="tableBody"></tbody>
-    </table>
+  <div id="divTableComponent" class="tableCard">
+    <h1>
+        <img src="${listIcon}" class="icon" />
+        <span>View Registered Data</span>
+    </h1><br>
+    <div class="tableWrapper">
+        <table id="viewData" class="displayRegisteredData">
+            <thead>
+                <tr>
+                    <th class="storedDataColHeader">Name</th>
+                    <th class="storedDataColHeader">Email</th>
+                    <th class="storedDataColHeader">Phone</th>
+                    <th class="storedDataColHeader">Gender</th>
+                    <th class="storedDataColHeader" colspan="2">Action</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+        </table>
+    </div>
     <span id="editTableRowNo" class="invisible"></span>
 </div>
 

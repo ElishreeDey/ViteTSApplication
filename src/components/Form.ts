@@ -6,6 +6,7 @@
 * Created     : 2026-05-29
 ****************************************************************************************************************************
 */
+import faceIcon from '../assets/faceicon.jpg'
 
 import { checkNotIsEmpty,validateEmail,validateFlexiblePhone } from "../utils/validation";
 
@@ -50,8 +51,12 @@ export function renderForm() : string{
   return `
   
   
-    <div id="divFormComponent">
-    <h1>Registration</h1>
+    <div id="divFormComponent" class="formCard">
+    
+    <h1>
+        <img src="${faceIcon}" class="icon" />
+        <span>Registration</span>
+    </h1>
     <form id="registrationForm">
         <label for="userName">
             First name:
