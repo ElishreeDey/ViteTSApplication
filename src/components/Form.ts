@@ -62,7 +62,7 @@ export function renderForm() : string{
             First name:
             <span id="mandatoryName" class="mandatory">*</span>
         </label><br>
-        <input type="text" id="userName" required onchange="checkNotIsEmpty(this.value)"><br>
+        <input type="text" id="userName" required><br>
         <label for="email">
             Email:
             <span id="mandatoryEmail" class="mandatory">*</span>
